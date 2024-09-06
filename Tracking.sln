@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Api", "Tracking.Api\Tracking.Api.csproj", "{70C15E99-4431-4D2C-8FA1-21655B43EBFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Ef", "Tracking.Ef\Tracking.Ef.csproj", "{CD875E31-1119-43C6-BAE7-D486B47AFA87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70C15E99-4431-4D2C-8FA1-21655B43EBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70C15E99-4431-4D2C-8FA1-21655B43EBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70C15E99-4431-4D2C-8FA1-21655B43EBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70C15E99-4431-4D2C-8FA1-21655B43EBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD875E31-1119-43C6-BAE7-D486B47AFA87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD875E31-1119-43C6-BAE7-D486B47AFA87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD875E31-1119-43C6-BAE7-D486B47AFA87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD875E31-1119-43C6-BAE7-D486B47AFA87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
