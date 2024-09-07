@@ -54,7 +54,7 @@ namespace Tracking.Ef.Migrations
                 values: new object[,]
                 {
                     { 1L, true, "Active account" },
-                    { 2L, false, "Active account" }
+                    { 2L, false, "Inactive account" }
                 });
 
             migrationBuilder.CreateIndex(

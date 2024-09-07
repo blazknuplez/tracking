@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Api", "Tracking.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Ef", "Tracking.Ef\Tracking.Ef.csproj", "{CD875E31-1119-43C6-BAE7-D486B47AFA87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Contracts", "Tracking.Contracts\Tracking.Contracts.csproj", "{A9C7BBF7-BB86-4F40-9AC1-2ABE0339D268}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{CD875E31-1119-43C6-BAE7-D486B47AFA87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD875E31-1119-43C6-BAE7-D486B47AFA87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD875E31-1119-43C6-BAE7-D486B47AFA87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C7BBF7-BB86-4F40-9AC1-2ABE0339D268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C7BBF7-BB86-4F40-9AC1-2ABE0339D268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C7BBF7-BB86-4F40-9AC1-2ABE0339D268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C7BBF7-BB86-4F40-9AC1-2ABE0339D268}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

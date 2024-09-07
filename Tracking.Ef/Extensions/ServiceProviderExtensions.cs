@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Tracking.Ef.Extensions;
 
@@ -8,6 +9,6 @@ public static class ServiceProviderExtensions
     {
         var scope = serviceProvider.CreateScope();
         var databaseContext = scope.ServiceProvider.GetRequiredService<TrackingDbContext>();
-        await databaseContext.Database.EnsureCreatedAsync();
+        await databaseContext.Database.MigrateAsync();
     }
 }

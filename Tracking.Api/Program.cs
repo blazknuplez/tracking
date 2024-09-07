@@ -1,5 +1,7 @@
 using FluentValidation;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using Tracking.Ef;
 using Tracking.Ef.Extensions;
 using Tracking.Requests;
 using Tracking.Services;
@@ -12,7 +14,22 @@ builder.Services
     .AddSwaggerGen()
     .AddScoped<IValidator<PostEventRequest>, PostEventRequestValidator>()
     .AddScoped<ITrackingService, TrackingService>()
-    .AddTrackingDbContext(builder.Configuration);
+    .AddTrackingDbContext(builder.Configuration)
+    .AddMassTransit(x =>
+    {
+        x.AddEntityFrameworkOutbox<TrackingDbContext>(o =>
+        {
+            o.QueryDelay = TimeSpan.FromSeconds(1);
+            o.UseSqlServer();
+            o.UseBusOutbox();
+        });
+
+        x.UsingRabbitMq((context,cfg) =>
+        {
+            cfg.Host("localhost", "/", h => { h.Username("guest"); h.Password("guest"); });
+            cfg.ConfigureEndpoints(context);
+        });
+    });
 
 var app = builder.Build();
 

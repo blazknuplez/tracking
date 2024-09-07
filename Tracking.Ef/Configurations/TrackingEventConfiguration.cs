@@ -4,11 +4,11 @@ using Tracking.Ef.Entities;
 
 namespace Tracking.Ef.Configurations;
 
-internal class EventConfiguration : IEntityTypeConfiguration<Event>
+internal class TrackingEventConfiguration : IEntityTypeConfiguration<TrackingEvent>
 {
-    public void Configure(EntityTypeBuilder<Event> builder)
+    public void Configure(EntityTypeBuilder<TrackingEvent> builder)
     {
-        builder.ToTable("Events");
+        builder.ToTable("TrackingEvents");
         builder.HasKey(x => x.Id);
         builder.Property(x => x.AccountId).IsRequired();
         builder.Property(x => x.Data).HasMaxLength(5000).IsRequired();

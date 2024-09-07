@@ -1,6 +1,6 @@
 ﻿namespace Tracking.Ef.Entities;
 
-public class Event
+public class TrackingEvent
 {
     public long Id { get; set; }
     public long AccountId { get; set; }
