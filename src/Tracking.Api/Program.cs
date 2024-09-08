@@ -1,5 +1,5 @@
 using FluentValidation;
-using Microsoft.AspNetCore.Mvc;
+using Tracking;
 using Tracking.Ef.Extensions;
 using Tracking.Extensions;
 using Tracking.Requests;
@@ -27,25 +27,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapPost("api/events/{accountId}", async ([AsParameters]PostEventRequest request,
-    [FromServices] IValidator<PostEventRequest> validator,
-    [FromServices] ITrackingService trackingService,
-    CancellationToken cancellationToken = default) =>
-    {
-        var validationResult = await validator.ValidateAsync(request, cancellationToken);
-        if (!validationResult.IsValid)
-        {
-            return TypedResults.ValidationProblem(validationResult.ToDictionary());
-        }
 
-        await trackingService.TrackDataAsync(request.AccountId, request.Body.Data, cancellationToken);
-
-        return Results.Accepted();
-    })
-    .Produces(202)
-    .ProducesValidationProblem()
-    .WithName("Post Events")
+app.MapGroup("/events")
+    .MapTrackingApiEndpoints()
+    .WithTags("Tracking events")
     .WithOpenApi();
 
 await app.Services.EnsureTrackingDatabaseCreated();
 await app.RunAsync();
+
+// for integration tests
+public partial class Program { }

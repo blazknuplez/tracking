@@ -3,7 +3,7 @@ using Tracking.Ef;
 
 namespace Tracking.Extensions;
 
-internal static class ServiceCollectionExtensions
+internal static class PublisherExtensions
 {
     public static IServiceCollection AddPublisher(this IServiceCollection services, IConfiguration configuration)
     {
