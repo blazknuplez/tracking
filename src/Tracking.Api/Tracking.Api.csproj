@@ -17,12 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Tracking.Contracts\Tracking.Contracts.csproj" />
       <ProjectReference Include="..\Tracking.Ef\Tracking.Ef.csproj" />
     </ItemGroup>

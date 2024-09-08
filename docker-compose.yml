@@ -1,0 +1,50 @@
+services:
+  rabbitmq:
+    image: masstransit/rabbitmq:latest
+    ports:
+      - "5671:5671"
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - tracking
+  mssql:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    environment:
+      - "ACCEPT_EULA=Y"
+      - "SA_PASSWORD=2Secure*Password2"
+    ports:
+      - 1433:1433
+    networks:
+      - tracking
+  api:
+    image: tracking/api
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__TrackingDatabase=Data Source=mssql,1433;Initial Catalog=Tracking;User ID=SA;Password=2Secure*Password2;TrustServerCertificate=True;
+      - Publisher__Host=rabbitmq
+    build:
+      context: ./src
+      dockerfile: Dockerfile.api
+    ports:
+     - "5000:80"
+    depends_on:
+      - rabbitmq
+      - mssql
+    networks:
+      - tracking
+  client:
+    image: tracking/client
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Subscriber__Host=rabbitmq
+    build:
+      context: ./src
+      dockerfile: Dockerfile.client
+    depends_on:
+      - api
+    networks:
+      - tracking
+networks:
+  tracking:
+    driver: bridge

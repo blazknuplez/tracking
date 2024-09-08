@@ -7,8 +7,21 @@ public static class ServiceProviderExtensions
 {
     public static async Task EnsureTrackingDatabaseCreated(this IServiceProvider serviceProvider)
     {
+        var created = false;
         var scope = serviceProvider.CreateScope();
         var databaseContext = scope.ServiceProvider.GetRequiredService<TrackingDbContext>();
-        await databaseContext.Database.MigrateAsync();
+
+        while (!created)
+        {
+            try
+            {
+                await databaseContext.Database.MigrateAsync();
+                created = true;
+            }
+            catch
+            {
+                await Task.Delay(1000);
+            }
+        }
     }
 }
