@@ -1,12 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Api", "Tracking.Api\Tracking.Api.csproj", "{70C15E99-4431-4D2C-8FA1-21655B43EBFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Api", "src\Tracking.Api\Tracking.Api.csproj", "{70C15E99-4431-4D2C-8FA1-21655B43EBFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Ef", "Tracking.Ef\Tracking.Ef.csproj", "{CD875E31-1119-43C6-BAE7-D486B47AFA87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Ef", "src\Tracking.Ef\Tracking.Ef.csproj", "{CD875E31-1119-43C6-BAE7-D486B47AFA87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Contracts", "Tracking.Contracts\Tracking.Contracts.csproj", "{A9C7BBF7-BB86-4F40-9AC1-2ABE0339D268}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Contracts", "src\Tracking.Contracts\Tracking.Contracts.csproj", "{A9C7BBF7-BB86-4F40-9AC1-2ABE0339D268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Client", "Tracking.Client\Tracking.Client.csproj", "{4EA6C611-52A9-49CC-BE69-1FB5720E362F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Client", "src\Tracking.Client\Tracking.Client.csproj", "{4EA6C611-52A9-49CC-BE69-1FB5720E362F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D9C127AC-060D-47FC-8DF2-9E0DA7A15787}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +32,11 @@ Global
 		{4EA6C611-52A9-49CC-BE69-1FB5720E362F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EA6C611-52A9-49CC-BE69-1FB5720E362F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EA6C611-52A9-49CC-BE69-1FB5720E362F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70C15E99-4431-4D2C-8FA1-21655B43EBFA} = {D9C127AC-060D-47FC-8DF2-9E0DA7A15787}
+		{4EA6C611-52A9-49CC-BE69-1FB5720E362F} = {D9C127AC-060D-47FC-8DF2-9E0DA7A15787}
+		{A9C7BBF7-BB86-4F40-9AC1-2ABE0339D268} = {D9C127AC-060D-47FC-8DF2-9E0DA7A15787}
+		{CD875E31-1119-43C6-BAE7-D486B47AFA87} = {D9C127AC-060D-47FC-8DF2-9E0DA7A15787}
 	EndGlobalSection
 EndGlobal
