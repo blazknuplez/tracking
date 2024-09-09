@@ -28,7 +28,9 @@ internal class TrackingService : ITrackingService
         var trackingEvent = new TrackingEvent { AccountId = accountId, Data = data };
         
         await _context.TrackingEvents.AddAsync(trackingEvent, cancellationToken);
-        await _publishEndpoint.Publish(new TrackingEventReceived(accountId, data), cancellationToken);
+        await _publishEndpoint.Publish(new TrackingEventReceived(accountId, data),
+            x => x.SetRoutingKey($"account-id-{accountId}"),
+            cancellationToken);
 
         try
         {
