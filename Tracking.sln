@@ -16,6 +16,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Api.UnitTests", "t
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracking.Api.IntegrationTests", "tests\Tracking.Api.IntegrationTests\Tracking.Api.IntegrationTests.csproj", "{5A470C8F-6BF3-40AF-9391-31BD2FCC084A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{FF85E7D5-3525-4233-8BE5-6C0A0579F5C1}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		src\Dockerfile.api = src\Dockerfile.api
+		src\Dockerfile.client = src\Dockerfile.client
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
