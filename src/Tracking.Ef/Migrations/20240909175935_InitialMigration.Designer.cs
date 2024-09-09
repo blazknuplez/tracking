@@ -12,8 +12,8 @@ using Tracking.Ef;
 namespace Tracking.Ef.Migrations
 {
     [DbContext(typeof(TrackingDbContext))]
-    [Migration("20240907162836_DataSeedUpdatedMigration")]
-    partial class DataSeedUpdatedMigration
+    [Migration("20240909175935_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -235,16 +235,20 @@ namespace Tracking.Ef.Migrations
                             Id = 3L,
                             IsActive = true,
                             Name = "Another active account"
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            IsActive = true,
+                            Name = "Yet another active account"
                         });
                 });
 
             modelBuilder.Entity("Tracking.Ef.Entities.TrackingEvent", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<long>("AccountId")
                         .HasColumnType("bigint");

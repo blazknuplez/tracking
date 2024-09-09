@@ -15,7 +15,7 @@ public class TrackingEventReceivedConsumer : IConsumer<TrackingEventReceived>
 
     public Task Consume(ConsumeContext<TrackingEventReceived> context)
     {
-        _logger.LogInformation("Received event: {AccountId} - {Data}", context.Message.AccountId, context.Message.Data);
+        _logger.LogInformation("{@Event}", context.Message);
         return Task.CompletedTask;
     }
 }

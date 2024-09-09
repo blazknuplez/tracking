@@ -37,7 +37,6 @@ var host = Host.CreateDefaultBuilder(args)
                         {
                             b.RoutingKey = $"account-id-{accountId}";
                             b.ExchangeType = ExchangeType.Topic;
-                            // b.SetBindingArgument(TrackingHeaders.AccountId, accountId);
                         }); 
                     }
                     

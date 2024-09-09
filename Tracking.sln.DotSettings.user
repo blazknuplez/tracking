@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a8edcae2_002D287e_002D4cb6_002Db1e7_002Deca9a983bee9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateTrackingEvent_ValidationFailed_ShouldReturn400" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::C0134F49-D7BE-4984-A162-79188C21771D::net8.0::Tracking.Api.UnitTests.TrackingEventApiTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5A470C8F-6BF3-40AF-9391-31BD2FCC084A::net8.0::Tracking.Api.IntegrationTests.TrackingEventApiIntegrationTests.Send_ShouldSucceed&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5A470C8F-6BF3-40AF-9391-31BD2FCC084A::net8.0::Tracking.Api.IntegrationTests.TrackingEventApiIntegrationTests.PostTrackingEvent_InactiveAccountId_ShouldReturnStatus400&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5A470C8F-6BF3-40AF-9391-31BD2FCC084A::net8.0::Tracking.Api.IntegrationTests.TrackingEventApiIntegrationTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -1,3 +1,3 @@
 ﻿namespace Tracking.Contracts.Events;
 
-public record TrackingEventReceived(long AccountId, string Data);
+public record TrackingEventReceived(Guid Id, long AccountId, string Data, DateTimeOffset Timestamp);

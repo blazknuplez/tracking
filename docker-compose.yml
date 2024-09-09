@@ -49,20 +49,20 @@ services:
       - api
     networks:
       - tracking
-  client-second:
-    image: tracking/client
-    environment: 
-      - ASPNETCORE_ENVIRONMENT=Development
-      - Subscriber__Host=rabbitmq
-      - Subscriber__ConnectionName=client-second
-      - AccountFilter__AccountIds__0=3
-    build:
-      context: ./src
-      dockerfile: Dockerfile.client
-    depends_on:
-      - api
-    networks:
-      - tracking
+  # client-second:
+  #   image: tracking/client
+  #   environment: 
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #     - Subscriber__Host=rabbitmq
+  #     - Subscriber__ConnectionName=client-second
+  #     - AccountFilter__AccountIds__0=4
+  #   build:
+  #     context: ./src
+  #     dockerfile: Dockerfile.client
+  #   depends_on:
+  #     - api
+  #   networks:
+  #     - tracking
 networks:
   tracking:
     driver: bridge

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Tracking.Exceptions;
-using Tracking.Requests;
+using Tracking.Models;
 using Tracking.Services;
 
 namespace Tracking;
@@ -11,25 +11,27 @@ public static class TrackingEventApi
     public static RouteGroupBuilder MapTrackingApiEndpoints(this RouteGroupBuilder groups)
     {
         groups.MapPost("/{accountId}", CreateTrackingEvent)
-            .Accepts<PostEventRequest>("application/json")
             .Produces(202)
             .ProducesValidationProblem();
         
         return groups;
     }
     
-    internal static async Task<IResult> CreateTrackingEvent([AsParameters]PostEventRequest request,
-        [FromServices] IValidator<PostEventRequest> validator,
+    internal static async Task<IResult> CreateTrackingEvent([FromRoute] long accountId,
+        [FromQuery] string data,
+        [FromServices] IValidator<TrackingEventModel> validator,
         [FromServices] ITrackingService trackingService,
         CancellationToken cancellationToken = default)
     {
-        var validationResult = await validator.ValidateAsync(request, cancellationToken);
+        var trackingEvent = new TrackingEventModel { AccountId = accountId, Data = data };
+        
+        var validationResult = await validator.ValidateAsync(trackingEvent, cancellationToken);
         if (!validationResult.IsValid)
         {
             return TypedResults.ValidationProblem(validationResult.ToDictionary());
         }
 
-        var result = await trackingService.TrackDataAsync(request.AccountId, request.Body.Data, cancellationToken);
+        var result = await trackingService.TrackDataAsync(trackingEvent, cancellationToken);
 
         return result.Match(
             success => Results.Accepted(),

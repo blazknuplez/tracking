@@ -26,14 +26,4 @@ public class TrackingDbContext : DbContext
         builder.AddOutboxMessageEntity();
         builder.AddOutboxStateEntity();
     }
-    
-    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-    {
-        foreach (var entry in ChangeTracker.Entries<TrackingEvent>().Where(x => x.State == EntityState.Added))
-        {
-            entry.Entity.Timestamp = DateTimeOffset.UtcNow;
-        }
-
-        return base.SaveChangesAsync(cancellationToken);
-    }
 }
