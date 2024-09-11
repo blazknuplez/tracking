@@ -66,17 +66,17 @@ events by multiple parameters. It is also easy to scale the application, as we c
 
 Given the following dataset:
 
-| Id | AccountId | Data               | Timestamp                             |
-| :--- | :--- |:-------------------|:--------------------------------------|
-| 85f533cb-503e-4828-a85b-80a0381542d4 | 4 | Test               | **2024-09-10 15:48:44.0329075 +00:00** |
-| 44409fe7-8c2d-450b-932a-28db10208989 | 3 | Another test       | **2024-09-10 15:48:35.2044445 +00:00** |
-| 6c1f0e0d-4549-42c4-9541-b5f44531333f | 3 | Yet another test   | **2024-09-10 15:48:29.7362652 +00:00** |
-| 1f27b35e-3b8b-4c64-8dc8-c632b4d8efde | 1 | Important data     | **2024-09-10 15:48:23.3611679 +00:00** |
-| f8ac8d39-7dba-4f95-9c3b-bea3ee35a30a | 1 | Some data          | **2024-09-10 15:48:12.8343786 +00:00** |
-| aaa2cebf-3930-4827-afe9-730d17df25e1 | 1 | Old things         | 2024-09-02 15:48:21.0482620 +00:00    |
-| 53108a42-24a9-454c-a2b6-d8cd6ecba076 | 4 | Older things       | 2024-09-01 15:48:46.9372980 +00:00    |
-| fe18e74d-005d-4f6e-afb3-73524b7607be | 3 | Event older things | 2024-09-01 15:48:31.2852960 +00:00    |
-| 1cf0796f-18e4-4a29-b267-43271992c440 | 1 | Oldest things      | 2024-09-01 15:48:17.8842950 +00:00    |
+| Id | AccountId | Data              | Timestamp                             |
+| :--- | :--- |:------------------|:--------------------------------------|
+| 85f533cb-503e-4828-a85b-80a0381542d4 | 4 | Test              | **2024-09-10 15:48:44.0329075 +00:00** |
+| 44409fe7-8c2d-450b-932a-28db10208989 | 3 | Another test      | **2024-09-10 15:48:35.2044445 +00:00** |
+| 6c1f0e0d-4549-42c4-9541-b5f44531333f | 3 | Yet another test  | **2024-09-10 15:48:29.7362652 +00:00** |
+| 1f27b35e-3b8b-4c64-8dc8-c632b4d8efde | 1 | Important data    | **2024-09-10 15:48:23.3611679 +00:00** |
+| f8ac8d39-7dba-4f95-9c3b-bea3ee35a30a | 1 | Some data         | **2024-09-10 15:48:12.8343786 +00:00** |
+| aaa2cebf-3930-4827-afe9-730d17df25e1 | 1 | Old things        | 2024-09-02 15:48:21.0482620 +00:00    |
+| 53108a42-24a9-454c-a2b6-d8cd6ecba076 | 4 | Older things      | 2024-09-01 15:48:46.9372980 +00:00    |
+| fe18e74d-005d-4f6e-afb3-73524b7607be | 3 | Even older things | 2024-09-01 15:48:31.2852960 +00:00    |
+| 1cf0796f-18e4-4a29-b267-43271992c440 | 1 | Oldest things     | 2024-09-01 15:48:17.8842950 +00:00    |
 
 We can filter out data that is older than a week and then group the remaining rows by AccountId:
 ```
