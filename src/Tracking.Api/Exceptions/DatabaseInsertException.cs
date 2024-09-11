@@ -20,7 +20,7 @@ internal static class DatabaseExceptionExtensions
         return new ProblemDetails
         {
             Title = "Server error",
-            Detail = $"Exception occured while trying to save event '{exception.EventId}' to database",
+            Detail = $"Exception occured while trying to save event '{exception.EventId}' to database", // Would probably change EventId with CorrelationId in real implementation
             Status = 500
         };
     }

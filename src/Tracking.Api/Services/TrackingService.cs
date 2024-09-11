@@ -39,6 +39,7 @@ internal class TrackingService : ITrackingService
             Timestamp = DateTimeOffset.UtcNow
         };
         
+        // TrackingEventReceived is saved to Outbox table in same transaction as TrackingEvent is inserted into its table
         await _context.TrackingEvents.AddAsync(entity, cancellationToken);
         await _publishEndpoint.Publish(new TrackingEventReceived(entity.Id, entity.AccountId, entity.Data, entity.Timestamp),
             x => x.SetRoutingKey($"account-id-{entity.AccountId}"),

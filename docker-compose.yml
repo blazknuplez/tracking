@@ -28,13 +28,12 @@ services:
       dockerfile: Dockerfile.api
     ports:
      - "5000:80"
-     - "5001:8080"
     depends_on:
       - rabbitmq
       - mssql
     networks:
       - tracking
-  client-first:
+  client:
     image: tracking/client
     environment: 
       - ASPNETCORE_ENVIRONMENT=Development
@@ -49,20 +48,6 @@ services:
       - api
     networks:
       - tracking
-  # client-second:
-  #   image: tracking/client
-  #   environment: 
-  #     - ASPNETCORE_ENVIRONMENT=Development
-  #     - Subscriber__Host=rabbitmq
-  #     - Subscriber__ConnectionName=client-second
-  #     - AccountFilter__AccountIds__0=4
-  #   build:
-  #     context: ./src
-  #     dockerfile: Dockerfile.client
-  #   depends_on:
-  #     - api
-  #   networks:
-  #     - tracking
 networks:
   tracking:
     driver: bridge

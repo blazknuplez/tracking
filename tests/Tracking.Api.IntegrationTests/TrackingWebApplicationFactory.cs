@@ -30,6 +30,7 @@ public class TrackingWebApplicationFactory : WebApplicationFactory<Program>, IAs
         builder.UseTestServer();
         builder.ConfigureAppConfiguration(configuration =>
         {
+            // use connection strings from newly running containers
             var testConfiguration = new Dictionary<string, string?>
             {
                 ["ConnectionStrings:TrackingDatabase"] = _mssqlContainer.GetConnectionString(),

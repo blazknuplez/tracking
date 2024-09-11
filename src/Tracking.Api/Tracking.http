@@ -1,6 +1,0 @@
-@Tracking_HostAddress = https://localhost:7150/api/
-
-POST {{Tracking_HostAddress}}/events/1
-Accept: application/json
-
-###

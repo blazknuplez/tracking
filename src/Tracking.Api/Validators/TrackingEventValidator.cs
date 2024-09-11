@@ -13,7 +13,6 @@ internal class TrackingEventValidator : AbstractValidator<TrackingEventModel>
         _context = context;
         
         RuleFor(x => x.AccountId).Must(IsValidAccount).WithMessage($"Invalid {nameof(TrackingEventModel.AccountId)} - account must exist and be active");
-        // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
         RuleFor(x => x.Data).NotEmpty().WithMessage("Missing event data");
     }
 

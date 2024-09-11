@@ -2,7 +2,6 @@
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Moq;
-using Tracking.Ef.Entities;
 using Tracking.Exceptions;
 using Tracking.Models;
 using Tracking.Services;
